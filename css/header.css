@@ -1,3 +1,24 @@
+.header {
+    background-color: var(--bg-color);
+}
+
+.header-nav {
+    padding: 5px;
+}
+
+.header-banner__h1,
+.header-nav__logo {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header-nav__menu {
+    display: flex;
+    flex-direction: column;
+}
+
 .header-nav__menu-item {
     color: var(--main-text-color);
     text-decoration: none;
@@ -7,10 +28,34 @@
     text-decoration: underline;
 }
 
-.header-nav__menu-item::before {
-    content: "<";
+@media (min-width: 500px) {
+
+    .header-nav {
+        display: flex;
+    }
+    
+    .header-nav__menu {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+        flex: 1;
+    }
 }
 
-.header-nav__menu-item::after {
-    content: ">";
+
+.header-banner {
+    /* background-image: url(../img/baby-yoda.svg); */
+    background: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.5)  ) , url(../img/baby-yoda.svg);
+    background-size: cover;
+    /* background-attachment: fixed; */
+    min-height: 400px;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header-banner__h1 {
+    color: var(--bg-color);
 }

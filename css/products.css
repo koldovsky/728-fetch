@@ -1,3 +1,30 @@
-p::first-letter {
-    font-size: 2rem;
+.product-card {
+    border: 1px solid var(--bg-color);
+    padding: 5px;   
+}
+
+@media (min-width: 580px) {
+
+    .main-products__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+}
+
+@media (min-width: 720px) {
+
+    .main-products__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (min-width: 980px) {
+
+    .main-products__list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
 }
