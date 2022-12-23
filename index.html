@@ -20,6 +20,7 @@
         <a href="#products" class="header-nav__menu-item">Products</a>
         <a href="#contacts" class="header-nav__menu-item">Contacts</a>
         <a href="cart.html" class="header-nav__menu-item">Cart</a>
+        <div class="header-nav__menu-item clock"></div>
       </div>
     </nav>
     <div class="header-banner">
@@ -33,79 +34,17 @@
   <main>
     <section class="main-products container">
       <h2 id="products" class="main-products__h2">Products</h2>
-      <div class="main-products__list">
-        <article class="product-card">
-          <img src="img/baby-yoda.svg" alt="Baby Yoda">
-          <h3 class="product-card__h3">Baby Yoda</h3>
-          <p class="product-card__description">Lorem ipsum <a href="#">dolor</a> sit amet consectetur, adipisicing elit.
-            Porro
-            fuga autem possimus eveniet facere, non minus magnam obcaecati,
-            tenetur recusandae, corporis itaque suscipit. Vero illo nulla
-            asperiores laudantium tempore porro!
-          </p>
-          <div class="product-card__buttons">
-            <button class="product-card__buttons-info button button-card">
-              Info
-            </button>
-            <button class="product-card__buttons-buy button button-card">
-              Buy
-            </button>
-          </div>
-        </article>
-        <article class="product-card">
-          <img class="product-card__image" src="img/banana.svg" alt="Banana" />
-          <h3 class="product-card__h3">Banana</h3>
-          <p class="product-card__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-            fuga autem possimus eveniet facere, non minus magnam obcaecati,
-            tenetur recusandae, corporis itaque suscipit. Vero illo nulla
-            asperiores laudantium tempore porro!
-          </p>
-          <div class="product-card__buttons">
-            <button class="product-card__buttons-info button button-card">
-              Info
-            </button>
-            <button class="product-card__buttons-buy button button-card">
-              Buy
-            </button>
-          </div>
-        </article>
-        <article class="product-card">
-          <img class="product-card__image" src="img/girl.svg" alt="Girl" />
-          <h3 class="product-card__h3">Girl</h3>
-          <p class="product-card__description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-            fuga autem possimus eveniet facere, non minus magnam obcaecati,
-            tenetur recusandae, corporis itaque suscipit. Vero illo nulla
-            asperiores laudantium tempore porro!
-          </p>
-          <div class="product-card__buttons">
-            <button class="product-card__buttons-info button button-card">
-              Info
-            </button>
-            <button class="product-card__buttons-buy button button-card">
-              Buy
-            </button>
-          </div>
-        </article>
-        <article class="product-card">
-          <img class="product-card__image" src="img/viking.svg" alt="Viking" />
-          <h3 class="product-card__h3 viking">Viking</h3>
-          <p class="product-card__description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-            fuga autem possimus eveniet facere, non minus magnam obcaecati,
-            tenetur recusandae, corporis itaque suscipit. Vero illo nulla
-            asperiores laudantium tempore porro!
-          </p>
-          <div class="product-card__buttons">
-            <button class="product-card__buttons-info button button-card">
-              Info
-            </button>
-            <button class="product-card__buttons-buy button button-card">
-              Buy
-            </button>
-          </div>
-        </article>
+      <div class="main-products__carousel carousel">
+        <div class="carousel__inner">
+          <button class="carousel__prev">⬅️</button>
+          <div class="carousel__slide"></div>
+          <button class="carousel__next">➡️</button>
+        </div>
+        <div class="carousel__indicators">
+          
+        </div>
       </div>
+      <div class="main-products__list"></div>
     </section>
   </main>
   <footer id="contacts" class="footer container">
@@ -116,6 +55,9 @@
       <button class="button button-card">Submit</button>
     </form>
   </footer>
+  <script src="js/clock.js"></script>
+  <script src="js/products-carousel.js"></script>
+  <script src="js/product-list.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,29 @@
+.main-products__carousel .carousel__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 300px;
+}
+
+.main-products__carousel .carousel__slide {
+    display: flex;
+}
+.main-products__carousel .carousel__indicators {
+    display: flex;
+    justify-content: center;
+}
+
+.main-products__carousel .carousel__indicators .carousel__indicator {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+.main-products__carousel .carousel__indicators .carousel__indicator:hover {
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
 .product-card {
     border: 1px solid var(--bg-color);
     padding: 5px;   
