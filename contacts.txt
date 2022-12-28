@@ -1,0 +1,4 @@
+{}
+{"email":"john@wall.com","message":"Hello"}
+{"email":"qparmacevt@gmail.com","message":"HAWARYOU??"}
+{"email":"","message":"hello Vyacheslav!"}

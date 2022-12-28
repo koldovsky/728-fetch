@@ -1,34 +1,29 @@
-(function () {
+(async function () {
+    
+    const response = await fetch('api/products.json');
+    const products = await response.json();
+    renderProducts(products, 1);
 
-    const products = [
-        {
-            name: "Baby Yoda",
-            image: "img/baby-yoda.svg",
-            price: 10.99,
-            description: "Baby Yoda sticker"
-        },
-        {
-            name: "Banana",
-            image: "img/banana.svg",
-            price: 9.99,
-            description: "Banana sticker"
-        },
-        {
-            name: "Girl",
-            image: "img/girl.svg",
-            price: 5.99,
-            description: "Girl sticker"
-        },
-        {
-            name: "Viking",
-            image: "img/viking.svg",
-            price: 7.99,
-            description: "Viking sticker"
-        },
-    ];
+    // fetch('api/products.json')
+    //     .then( response => response.json() )
+    //     .then( products => renderProducts(products));
 
-    function renderProducts(products) {
+    // function ajax() {
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.onreadystatechange = function() {
+    //         if (xhr.readyState === 4 && xhr.status === 200) {
+    //             const products = JSON.parse(xhr.responseText);
+    //             renderProducts(products);
+    //         }
+    //     }
+    //     xhr.open('get', 'api/products.json', true);
+    //     xhr.send();
+    // }
+    // ajax();
+
+    function renderProducts(products, rate) {
         const productsContainer = document.querySelector('.main-products__list');
+        productsContainer.innerHTML = '';
         for (const product of products) {
             productsContainer.innerHTML += 
             `<article class="product-card">
@@ -42,13 +37,24 @@
                     Info
                     </button>
                     <button class="product-card__buttons-buy button button-card">
-                    Buy - ${product.price}
+                    Buy - ${(product.price * rate).toFixed(2)}
                     </button>
                 </div>
                 </article>`;
         }
     }
 
-    renderProducts(products);
+    let currencies;
+    async function convertCurrency() {
+        const currencyTo = document.querySelector('.main-products__currency').value;
+        if (!currencies) {
+            const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+            currencies = await response.json();
+        }
+        const rate = currencies.rates[currencyTo];
+        renderProducts(products, rate);
+    }
+
+    document.querySelector('.main-products__convert').addEventListener('click', convertCurrency);
 
 })();
